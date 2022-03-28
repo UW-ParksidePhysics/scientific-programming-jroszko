@@ -17,7 +17,12 @@ initial_velocity = initial_velocity * 3600 / 1000
 # Convert angle to radians
 launch_angle = launch_angle * pi / 180
 
-height = horizontal_range * tan(launch_angle) \
-         - 1 / (2 * initial_velocity ** 2) * standard_gravity * horizontal_range ** 2 / ((cos(launch_angle)) ** 2) \
-         + initial_height
-print(f'y     = {height:.1f} m')
+
+def calculate_height(horizontal_displacement, angle, starting_velocity, starting_height):
+    height = horizontal_displacement * tan(angle) \
+             - 1 / (2 * initial_velocity ** 2) * standard_gravity * horizontal_displacement ** 2 / ((cos(launch_angle)) ** 2) \
+             + initial_height
+    return height
+
+projectile_height = calculate_height(horizontal_range, launch_angle, initial_velocity, initial_height)
+print(f'y     = {projectile_height:.1f} m')

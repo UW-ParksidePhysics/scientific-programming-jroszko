@@ -24,5 +24,6 @@ def calculate_height(horizontal_displacement, angle, starting_velocity, starting
              + initial_height
     return height
 
+
 projectile_height = calculate_height(horizontal_range, launch_angle, initial_velocity, initial_height)
 print(f'y     = {projectile_height:.1f} m')

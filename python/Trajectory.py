@@ -47,3 +47,25 @@ for g in gravitational_accelerations:
     projectile_height = calculate_height(horizontal_range, launch_angle, initial_velocity, initial_height,
                                          gravitational_acceleration=g)
     print(f'y(g={g:.1f} m/s^2)    = {projectile_height:.1f} m')
+
+from sys import argv
+
+# for index, argument in enumerate(argv):
+#     print(f'i, arg = {index}, {argument}')
+#
+# if len(argv) > 1:
+#     gravitational_acceleration = float(argv[1])
+# gravitational_acceleration = float(input('Input acceleration due to gravity in m/s^2:'))
+
+gravitational_accelerations = []
+acceleration_data = open('gravitational_accelerations.txt', 'r')
+for line in acceleration_data:
+    gravitational_accelerations.append(float(line))
+
+print(gravitational_accelerations)
+
+# initial_velocity = 1.0 # m/s
+# time = 1.0 # s
+# final_velocity = initial_velocity + gravitational_acceleration * time
+# print(f'v(t={time} s, g={gravitational_acceleration}) = {final_velocity:.2f} m/s')
+

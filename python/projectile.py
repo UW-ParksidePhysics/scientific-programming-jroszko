@@ -44,12 +44,16 @@ def velocity(time, initial_velocity, acceleration):
 
 velocities = velocity(times, projectile_initial_velocity, -standard_gravity)
 kinetic_energies = kinetic_energy(projectile_mass, velocities)
-potential_energies = gravitational_potential_energy(projectile_mass, heights, gravitaional_acceleration=standard_gravity)
+potential_energies = gravitational_potential_energy(projectile_mass, heights, gravitational_acceleration=standard_gravity)
 total_energies = kinetic_energies + potential_energies
 
-plt.plot(times, kinetic_energies, color='red')
-plt.plot(times, potential_energies, color='green')
-plt.plot(times, total_energies, color='black')
+plt.plot(times, kinetic_energies, color='red', label=r'$T$')
+plt.plot(times, potential_energies, color='green', label=r'$U$')
+plt.plot(times, total_energies, color='black', label=r'$E$')
+plt.xlabel(r'$t$ (s)')
+plt.ylabel(r'$E, T, U$ (J)')
+plt.legend()
 plt.show()
+
 
 

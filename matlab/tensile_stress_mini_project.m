@@ -1,5 +1,5 @@
 %%%% RENAME from mini_project.m to (your_project_short_name).m
-% Comments describing mini-project ~ 100-200 words
+% Comments describing mini-project ~ 100-200 words ~
 
 % Tensile Stress Mini-Project - Written
 %It is important to address the problem of tensile stress of materials that are used to hang or pull 

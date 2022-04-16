@@ -29,12 +29,20 @@
 %	that do not change later in the script
 
 % materials: cotton, hemp, etc.
-%youngs_moduli = [...(materials)];
-%yield_strength = [...(materials)];
+youngs_moduli = [2.9*10^9,2.5*10^9];
+yield_strengths = [50*10^6,63*10^6];
+L = 10
+deltaL = linspace(0, maximum_strain)
 
-E_polyester = 2.9*10^9 % Young's modulus for Bulk Nylon
-yield_strength = 50*10^6
-maximum_strain = yield_strength/E_polyester
+
+for index = 1:length(youngs_moduli)
+   yield_strength = yield_strengths(index)
+   E = youngs_moduli(index)
+   maximum_strain = strain(yield_strength,E)
+end
+pause
+
+maximum_strain = strain(yield_strength,E_polyester)
 deltaL = linspace(0, maximum_strain) % elastic strain at failure --> strength/Young's Modulus
 L = 10 % meters
 epsilon = deltaL ./ L
@@ -78,4 +86,7 @@ hold off
 
 function stresses = stress(strains, youngs_modulus)
     stresses = youngs_modulus.*strains;
+end
+function strains = strain(stresses, youngs_modulus)
+    strains = stresses./youngs_modulus;
 end

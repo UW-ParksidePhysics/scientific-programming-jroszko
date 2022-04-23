@@ -48,4 +48,5 @@ for i in n:
 ## 4. Code comments are organized and explain the process of the code.
 ## 5. All variable names relate to the concept at hand (all formally adequate for the project)
 ## 6. The range of variables captures the problem well, no issues.
-## 7. Visualizations show the problem well, graph shows up after running code, appears coherent.
+## 7. The script follows a functional programming paradigm, it is structured and concise enough where it does not need further explanation/code.
+## 8. Visualizations show the problem well, graph shows up after running code, appears coherent.

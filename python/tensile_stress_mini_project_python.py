@@ -37,3 +37,4 @@ E = E_nylon
 sigma = stress(epsilon, E)
 plt.plot(epsilon, sigma)
 plt.show()
+

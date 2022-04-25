@@ -26,4 +26,4 @@ zaxis = cylinder(color=color.blue, pos=vector(0, 0, 0), axis=vector(0, 0, 10), r
 xlbl = label(pos=vector(0, 0, 11), text="z", color=color.blue, opacity=0, height=30, box=0)
 
 arrow(pos=vector(0, 0, 0), axis=vector(6, 20, 1), color=color.yellow, shaftwidth=0.5)
-xlbl = ()
+xlbl.arrow = label(text="ax + by + cz", pos=vector(6, 20, 1))

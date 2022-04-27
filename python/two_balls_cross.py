@@ -37,7 +37,6 @@ while time < stop_time:
     z = initial_position.z + initial_velocity.z * time
     ball.pos = vp.vector(x, y, z)
 
-    vp.rate(rate_of_animation)
     x2 = initial_position2.x + initial_velocity2.x * time
     y2 = initial_position2.y + initial_velocity2.y * time
     z2 = initial_position2.z + initial_velocity2.z * time

@@ -40,5 +40,5 @@ while time < stop_time:
     x2 = initial_position2.x + initial_velocity2.x * time
     y2 = initial_position2.y + initial_velocity2.y * time
     z2 = initial_position2.z + initial_velocity2.z * time
-    ball.pos = vp.vector(x2, y2, z2)
+    ball2.pos = vp.vector(x2, y2, z2)
     time += time_step

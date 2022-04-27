@@ -2,30 +2,32 @@ import vpython as vp
 
 initial_position = vp.vector(-3., 3., 3.)
 initial_velocity = vp.vector(1., -1., -1.)
-ball = vp.sphere(pos=initial_position,
-                 radius=0.5,
-                 color=vp.color.red,
-                 make_trail=True,
-                 trail_type="points",
-                 trail_radius=0.5,
-                 interval=15,
-                 retain=30)
-
+ball = vp.sphere(
+    pos=initial_position,
+    radius=0.5,
+    color=vp.color.red,
+    make_trail=True,
+    trail_type="points",
+    trail_radius=0.5,
+    interval=15,
+    retain=30
+)
 
 initial_position2 = vp.vector(7., 7., 7.)
 initial_velocity2 = vp.vector(-3., -3., -3.)
-ball2 = vp.sphere(pos=initial_position,
-                 radius=0.5,
-                 color=vp.color.blue,
-                 make_trail=True,
-                 trail_type="points",
-                 trail_radius=0.5,
-                 interval=15,
-                 retain=30)
-
+ball2 = vp.sphere(
+    pos=initial_position,
+    radius=0.5,
+    color=vp.color.blue,
+    make_trail=True,
+    trail_type="points",
+    trail_radius=0.5,
+    interval=15,
+    retain=30
+)
 
 animation_time_step = 0.1  # seconds
-rate_of_animation = 1/animation_time_step
+rate_of_animation = 1 / animation_time_step
 time_step = 0.05
 stop_time = 10.
 

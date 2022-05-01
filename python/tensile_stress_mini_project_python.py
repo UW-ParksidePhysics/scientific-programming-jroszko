@@ -1,47 +1,56 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
+import requests
+import lxml.html
+# import modulus and strength to get stress and strain
+
+url = 'http://www-materials.eng.cam.ac.uk/mpsite/short/OCR/ropes/default.html'
+length = 10
 
 
-def stress(strains, youngs_modulus):
-    return youngs_modulus * strains
+def read_webpage(link):
+    webdata = pd.read_html(link)
+    rope_data = webdata[6]
+    return rope_data
 
 
-def strain(stresses, youngs_modulus):
-    return stresses / youngs_modulus
+def stress(strains, modulus):
+    stress = modulus * strains
+    return stress
 
 
-def read_webpage():
-    return webdata
+def strain(stress, modulus):
+    strain = stress / modulus
+    return strain
 
 
-def calculate_stress_and_strain(youngs_moduli, yield_strengths):
-    stresses = []
-    strains = []
-    for index in range(len(youngs_moduli)):
-        yield_strength = yield_strengths[index]
-        E = youngs_moduli[index]
+def calculate_stress_and_strain(youngs_moduli_array, yield_strength_array):
+    stress_array = []
+    strain_array = []
+    for index in range(len(youngs_moduli_array)):
+        yield_strength = yield_strength_array[index]
+        E = youngs_moduli_array[index]
         maximum_strain = strain(yield_strength, E)
-        deltaL = np.linspace(0, maximum_strain)
-        epsilon = deltaL / L
-        strains.append(epsilon)
+        delta_length = np.linspace(0, maximum_strain)
+        epsilon = delta_length / length
+        strain_array.append(epsilon)
         sigma = E * epsilon
-        stresses.append(sigma)
-    return stresses, strains
+        stress_array.append(sigma)
+    return stress_array, strain_array
 
 
-def plot_stress_strain(stresses, strains):
-    for epsilon, sigma in zip(strains, stresses):
+def plot_stress_strain(stress_data, strain_data):
+    for epsilon, sigma in zip(strain_data, stress_data):
         plt.plot(epsilon, sigma)
     plt.show()
     return
 
 
-youngs_moduli = np.array([2.9 * 10 ** 9, 2.5 * 10 ** 9])
-yield_strengths = [50 * 10 ** 6, 63 * 10 ** 6]
-L = 10
-
-
-
-
-
-
+if __name__ == '__main__':
+    # url link troubleshoot:
+    print(read_webpage(url))
+    # df = pd.read_html(url)
+    # print(type(df))
+    # print(len(df))
+    # plot_stress_strain()

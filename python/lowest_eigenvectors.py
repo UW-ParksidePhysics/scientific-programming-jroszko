@@ -1,7 +1,19 @@
+__author__ = "Jordan Roszko"
 import numpy as np
 
 
 def lowest_eigenvectors(square_matrix, number_of_eigenvectors=3):
+    """
+    Identify eigenvectors with smallest K eigenvalues given input matrix using NumPy's eig  (Links to an external site.)function
+    :param square_matrix: ndarray, shape(M, M)
+    :param number_of_eigenvectors: int, optional
+    :return: eigenvalues: ndarray, shape(K,)
+    Array of the K lowest-value eigenvalues ordered from lowest to highest.
+    eigenvectors: ndarray, shape(K, M)
+    Array of K eigenvectors with M components arranged in order corresponding to their eigenvalues. The first index should
+    correspond to the eigenvalue index in the eigenvalues array. The order of the components in the eigenvector remains the
+    same as output by NumPy's eig.
+    """
     m, n = square_matrix.shape
     if m != n:
         raise IndexError("Not Square")

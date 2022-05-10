@@ -116,4 +116,4 @@ def vinet(volumes, equilibrium_energy, bulk_modulus, bulk_modulus_derivative, eq
                     (2. * bulk_modulus * equilibrium_volume / k0pm1_squared) * \
                     (2. - (5. + 3. * reduced_volume_lengths * k0pm1 - 3 * bulk_modulus_derivative))
 
-    return
+    return vinet_eos
